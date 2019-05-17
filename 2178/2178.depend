@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558024063 source:c:\users\jeongyw12382\desktop\workspace\c\2178\main.cpp
+	<iostream>
+	<cstring>
+	<queue>
+

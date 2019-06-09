@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1560093327 source:c:\users\jeongyw12382\desktop\workspace\c\usaco\1.2.4\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+

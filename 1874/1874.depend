@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1561039358 source:/home/yunwoo/Desktop/Algo/1874/main.cpp
+	<iostream>
+	<stack>
+	<vector>
+	<algorithm>
+

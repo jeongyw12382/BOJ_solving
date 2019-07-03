@@ -2,31 +2,29 @@
 
 using namespace std;
 
-int N, M, val, broken[10] = {0};
-int cnt[500000] = {0};
+vector<int> broken;
+int M, val, min_cnt = INT_MAX;
+string N;
 
-pair<bool, int> check(int k){
-    int cnt = 0;
-    while(k != 0){
-        for(int i = 0 ; i < 10; i++){
-            if (broken[k % 10]) return {false, INT_MAX};
+bool check(string num){
+    for(int i = 0; i < num.size(); i++){
+        for(int j = 0; j < broken.size(); j++){
+            if(num[i] == (char)(broken[j] + '0')) return false;
         }
-        k /= 10;
-        cnt++;
     }
-    return {true, cnt};
+    return true;
 }
 
 int main()
 {
     cin >> N >> M;
-    for(int i = 0; i< M; i++){
-        cin >> val;
-        broken[val] = 1;
+    min_cnt = abs(100 - stoi(N));
+    for(int i = 0; i < M; i++) {cin >> val; broken.push_back(val);}
+    for(int i = 0; i <= 1000001; i++){
+        string s = to_string(i);
+        if(check(s)){
+            min_cnt = min((int)(s.size()) + abs(stoi(N) - i), min_cnt);
+        }
     }
-    for(int i = 0; i<500000; i++){
-        auto check_curr = check(i + 1);
-        if(!check_curr.first) cnt
-    }
-
+    cout << min_cnt;
 }
